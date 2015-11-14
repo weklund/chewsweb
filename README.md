@@ -28,8 +28,8 @@ extends layout
 
 block content
 	div.container
-		h1 Program Name
-		p Hello World
+		h1 Chews
+		p Your personalized smart menu..
 ```
 
 ##Author
