@@ -1,23 +1,30 @@
 extends layout
 
 block content
-	div.container
+	div.container(style="background-image:'http://static1.squarespace.com/static/56478f70e4b0996714c3a059/564792bde4b0905208082a07/564792bde4b0905208082a08/1447531210904/chews.png'")
 		.form-group
-		input.form-control(type='text', placeholder='Search for your fav chews')
+		input.form-control#tbSearch(type='text', placeholder='Search for your fav chews', style='margin-top:50px')
 		h1(style='\
-		font-family: brandon-grotesque;\
+		font-family: fantasy;\
 		font-size: 50px;\
 		line-height: .9em;\
 		text-transform: none;\
 		letter-spacing: 0em;\
-		font-weight: 400;\
+		font-weight: bold;\
 		font-style: normal;\
-		color: Green;') Your Top CHEWS! 
+		color: black;') Your Top CHEWS! 
 		br
-		|     Bake and Saltfish
-		br
-		|     Dumplings (for soup- see recipe)
-		br
+		table.table.table-hover
+		tbody
+		tr
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_04_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_03_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_05_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_01_0622.jpg', alt='...')
 		#content-primary.mc
 		ul.menu-links
 		#restaurant-menu
