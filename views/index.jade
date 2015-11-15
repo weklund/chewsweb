@@ -3,84 +3,92 @@ extends layout
 block content
 	div.container
 		.col-md-12
-			h1 CHEWS
-			p Smart menus that help you choose..
-			.col-md-12(style="background-image: url('http://media.olivegarden.com/en_us/images/product/d-appetizer-h1x3.jpg');margin:2% 0 1% 0%;padding:7%;border-radius:1%;")
+			h1(style='text-align:center;font-family:Serif;') CHEWS
+			p(style='text-align:center;') Smart menus that help you choose..
+			.col-md-12(style="background-image: url('http://media.olivegarden.com/en_us/images/product/d-appetizer-h1x3.jpg');margin:0 0 1% 0%;padding:7%;border-radius:1%;")
 				.col-md-8(style='margin-left:10%;')
 					input.form-control(type='search', placeholder='Search for your Dish')
-		.col-md-12(style='background-color:#A2B432;border-radius:2%')
-			label(style='padding:1%;margin:0 0 0 40%;') TOP PICKS
-		.col-md-12(style='margin:4% 0 5% 0;')
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-mediterranean-flatbread-gv1x1.jpg");height:170px;') Top1
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-spicy-calamari-gv1x1.jpg");height:170px;') Top2
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-fettucine-alfredo-dinner-gv1x1.jpg");height:170px;') Top3
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-garlic-rosemary-chicken-gv1x1.jpg");height:170px;') Top4
-		.col-md-12(style='margin:1% 0 2% 0;color:red')
-			.col-md-6 Salads:
-				li 
-					a(href='') Tomato-Peach Salad
-				li 
-					a(href='') Squash and Orzo Salad
-				li 
-					a(href='') Watercress-Fruit Salad
-				li 
-					a(href='') Hearty Tuna Salad
-				li 
-					a(href='') Super Simple Salad
-			.col-md-6 Soups:
-				li 
-					a(href='') Chicken Almond
-				li 
-					a(href='') Bayou Shrimp
-				li 
-					a(href='') Chinese Mushroom
-				li 
-					a(href='') Hearty Vegetable
-				li 
-					a(href='') Chicken Broccoli Cheddar
-		.col-md-12(style='margin:1% 0 2% 0;color:red')
-			.col-md-6 Sandwiches:
-				li 
-					a(href='') Tuna
-				li 
-					a(href='') Sweet Chicken Onin Teriyaki
-				li 
-					a(href='') Meet Ball Marinara
-				li 
-					a(href='') Turkey Breast
-				li 
-					a(href='') Italian B.M.T
-			.col-md-6 Dishes:
-				li 
-					a(href='') Vietnam
-				li 
-					a(href='') Serbia
-				li 
-					a(href='') Jordan
-				li 
-					a(href='') Mexico
-				li 
-					a(href='') Italy
-		.col-md-12(style='margin:1% 0 2% 0;color:red')
-			.col-md-6 Desserts:
-				li 
-					a(href='') Rocky Road Dessert
-				li 
-					a(href='') Linzer Torte
-				li 
-					a(href='') Malakoff Torte
-				li 
-					a(href='') Sachertorte
-				li 
-					a(href='') Vanilla Slice
-			.col-md-6 Bakery:
-				li 
-					a(href='') Apple strudel
-				li 
-					a(href='') Baklava
-				li 
-					a(href='') Banitsa
-				li 
-					a(href='') Birnbrot
-				li 
-					a(href='') Cherry pie
+		.col-md-12
+			.col-md-1
+			.col-md-10(style='background-color:#A2B432;border-radius:2%;')
+				.col-md-4
+				.col-md-4
+					h3(style='text-align:center;') TOP 3 PICKS
+				.col-md-4
+				// label(style='padding:1%;margin:0 0 0 40%;') TOP PICKS
+			.col-md-1
+		.col-md-12(style='margin:2% 0 2% 0;')
+			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-mediterranean-flatbread-gv1x1.jpg");height:170px;')
+			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-spicy-calamari-gv1x1.jpg");height:170px;')
+			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-fettucine-alfredo-dinner-gv1x1.jpg");height:170px;')
+			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-garlic-rosemary-chicken-gv1x1.jpg");height:170px;')
+		.col-md-12(style='background-color:whitesmoke')
+			.col-md-12(style='margin:1% 0 2% 0;color:red')
+				.col-md-6 Salads:
+					li 
+						a(href='') Tomato-Peach Salad
+					li 
+						a(href='') Squash and Orzo Salad
+					li 
+						a(href='') Watercress-Fruit Salad
+					li 
+						a(href='') Hearty Tuna Salad
+					li 
+						a(href='') Super Simple Salad
+				.col-md-6 Soups:
+					li 
+						a(href='') Chicken Almond
+					li 
+						a(href='') Bayou Shrimp
+					li 
+						a(href='') Chinese Mushroom
+					li 
+						a(href='') Hearty Vegetable
+					li 
+						a(href='') Chicken Broccoli Cheddar
+			.col-md-12(style='margin:1% 0 2% 0;color:red')
+				.col-md-6 Sandwiches:
+					li 
+						a(href='') Tuna
+					li 
+						a(href='') Sweet Chicken Onin Teriyaki
+					li 
+						a(href='') Meet Ball Marinara
+					li 
+						a(href='') Turkey Breast
+					li 
+						a(href='') Italian B.M.T
+				.col-md-6 Dishes:
+					li 
+						a(href='') Vietnam
+					li 
+						a(href='') Serbia
+					li 
+						a(href='') Jordan
+					li 
+						a(href='') Mexico
+					li 
+						a(href='') Italy
+			.col-md-12(style='margin:1% 0 2% 0;color:red')
+				.col-md-6 Desserts:
+					li 
+						a(href='') Rocky Road Dessert
+					li 
+						a(href='') Linzer Torte
+					li 
+						a(href='') Malakoff Torte
+					li 
+						a(href='') Sachertorte
+					li 
+						a(href='') Vanilla Slice
+				.col-md-6 Bakery:
+					li 
+						a(href='') Apple strudel
+					li 
+						a(href='') Baklava
+					li 
+						a(href='') Banitsa
+					li 
+						a(href='') Birnbrot
+					li 
+						a(href='') Cherry pie
