@@ -28,7 +28,7 @@ extends layout
 
 block content
 	div.container
-		h1 Chews
+		h1 CHEWS
 		p Your personalized smart menu..
 ```
 
