@@ -2,7 +2,7 @@ var express = require('express');
 var routes = express.Router();
 
 exports.index = function(req, res){
-  res.render('index');
+  res.render('demo');
 };
 
 exports.demo = function(req,res){
