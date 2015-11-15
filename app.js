@@ -29,7 +29,18 @@ if (app.get('env') == 'development') {
 }
 
 app.get('/', routes.index);
-//app.get('/', routes.contents);
+
+app.get('/demo', function(req,res){
+  res.render('demo');
+});
+
+app.get('/about', function(req,res){
+  res.render('about');
+});
+
+//app.get('/demo', routes.demo);
+//app.get('/about', routes.about);
+//app.get('/contents', routes.contents);
 http.createServer(app).listen(app.get('port'), function (){
   console.log("Express server listening on port " + app.get('port'));
 });
