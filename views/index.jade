@@ -1,7 +1,114 @@
 extends layout
 
 block content
-	div.container
-		h1 Chews 
-		p Smart menus that help you choose..
-
+	div.container(style="background-image:'http://static1.squarespace.com/static/56478f70e4b0996714c3a059/564792bde4b0905208082a07/564792bde4b0905208082a08/1447531210904/chews.png'")
+		.form-group
+		input.form-control#tbSearch(type='text', placeholder='Search for your fav chews', style='margin-top:50px')
+		h1(style='\
+		font-family: fantasy;\
+		font-size: 50px;\
+		line-height: .9em;\
+		text-transform: none;\
+		letter-spacing: 0em;\
+		font-weight: bold;\
+		font-style: normal;\
+		color: black;') Your Top CHEWS! 
+		br
+		table.table.table-hover
+		tbody
+		tr
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_04_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_03_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_05_0622.jpg', alt='...')
+		td
+		img.img-rounded(style='width:20%', src='http://media.olivegarden.com/images/site/ext/pages/_promotions/home/homepage_six_grid_01_0622.jpg', alt='...')
+		#content-primary.mc
+		ul.menu-links
+		#restaurant-menu
+		h3 Soup & Salads
+		p.subtitle Add chicken to any salad $3.00
+		table
+		tbody
+		tr
+		th
+		cite Soup of the Day
+		td
+		td
+		td
+		| 4.00
+		tr
+		th
+		td
+		| 13.00
+		tr
+		th
+		cite Shepherds Pie
+		| Ground beef, carrots, celery, onion & garden peas topped with garlic mashed potatoes
+		td
+		td
+		td
+		| 13.00
+		tr
+		th
+		cite Chicken Curry
+		| Slow roasted curried chicken breast & veggies served over crisp potatoes
+		td
+		td
+		td
+		| 11.00
+		h3 Mac & Cheese
+		p.subtitle  
+		table
+		tbody
+		tr
+		th
+		cite Mac & Cheese
+		| Macaroni smothered in our signature 3 cheese blend. Choose two of the following toppings: sauteed mushrooms, sauteed peppers, caramelized onions, buffalo sauce, BBQ sauce, jalapenos, british or american bacon. Additional topping $0.50
+		td
+		td
+		td
+		| 8.00
+		h3 Hand Cut Fries & Sides
+		p.subtitle  
+		table
+		tbody
+		tr
+		th
+		cite Hand Cut Fries
+		| Lightly salted or tossed in one of the following: garlic buffalo with bleu cheese, curry sauce, garlic herb butter with parmesan, or creamy tomato & artichoke
+		td
+		td
+		td
+		| 6.00
+		tr
+		th
+		cite Seasonal Vegetables
+		td
+		td
+		td
+		| 4.00
+		tr
+		th
+		cite Garlic Mashed Potatoes
+		td
+		td
+		td
+		| 4.00
+		tr
+		th
+		cite Croquettes
+		td
+		td
+		td
+		| 4.00
+		tr
+		th
+		cite Side Salad
+		td
+		td
+		td
+		| 4.00
+		h2.null 
