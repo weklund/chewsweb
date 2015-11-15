@@ -240,7 +240,7 @@ a:focus {
 /* Header Wrap */
 
 .headerwrap {
-    background: url("../img/header-bg.jpg") no-repeat center top;
+    background: url("/public/images/header-bg.jpg") no-repeat center top;
     background-size: cover;
     padding-top: 80px;
 }
@@ -327,7 +327,7 @@ a:focus {
 /* Divider 1 & 2 Wrap */
 
 .divider01 {
-    background: url("../img/divider-1.jpg") no-repeat center center;
+    background: url("/public/images/divider-1.jpg") no-repeat center center;
     background-size: cover;
     max-height: 350px;
     padding: 40px;
