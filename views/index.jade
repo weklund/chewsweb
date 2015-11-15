@@ -1,94 +1,355 @@
 extends layout
-
 block content
-	div.container
-		.col-md-12
-			h1(style='text-align:center;font-family:Serif;') CHEWS
-			p(style='text-align:center;') Smart menus that help you choose..
-			.col-md-12(style="background-image: url('http://media.olivegarden.com/en_us/images/product/d-appetizer-h1x3.jpg');margin:0 0 1% 0%;padding:7%;border-radius:1%;")
-				.col-md-8(style='margin-left:10%;')
-					input.form-control(type='search', placeholder='Search for your Dish')
-		.col-md-12
-			.col-md-1
-			.col-md-10(style='background-color:#A2B432;border-radius:2%;')
-				.col-md-4
-				.col-md-4
-					h3(style='text-align:center;') TOP 3 PICKS
-				.col-md-4
-				// label(style='padding:1%;margin:0 0 0 40%;') TOP PICKS
-			.col-md-1
-		.col-md-12(style='margin:2% 0 2% 0;')
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-mediterranean-flatbread-gv1x1.jpg");height:170px;')
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-spicy-calamari-gv1x1.jpg");height:170px;')
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-fettucine-alfredo-dinner-gv1x1.jpg");height:170px;')
-			.col-md-3(style='background-image: url("http://media.olivegarden.com/en_us/images/product/d-garlic-rosemary-chicken-gv1x1.jpg");height:170px;')
-		.col-md-12(style='background-color:whitesmoke')
-			.col-md-12(style='margin:1% 0 2% 0;color:red')
-				.col-md-6 Salads:
-					li 
-						a(href='') Tomato-Peach Salad
-					li 
-						a(href='') Squash and Orzo Salad
-					li 
-						a(href='') Watercress-Fruit Salad
-					li 
-						a(href='') Hearty Tuna Salad
-					li 
-						a(href='') Super Simple Salad
-				.col-md-6 Soups:
-					li 
-						a(href='') Chicken Almond
-					li 
-						a(href='') Bayou Shrimp
-					li 
-						a(href='') Chinese Mushroom
-					li 
-						a(href='') Hearty Vegetable
-					li 
-						a(href='') Chicken Broccoli Cheddar
-			.col-md-12(style='margin:1% 0 2% 0;color:red')
-				.col-md-6 Sandwiches:
-					li 
-						a(href='') Tuna
-					li 
-						a(href='') Sweet Chicken Onin Teriyaki
-					li 
-						a(href='') Meet Ball Marinara
-					li 
-						a(href='') Turkey Breast
-					li 
-						a(href='') Italian B.M.T
-				.col-md-6 Dishes:
-					li 
-						a(href='') Vietnam
-					li 
-						a(href='') Serbia
-					li 
-						a(href='') Jordan
-					li 
-						a(href='') Mexico
-					li 
-						a(href='') Italy
-			.col-md-12(style='margin:1% 0 2% 0;color:red')
-				.col-md-6 Desserts:
-					li 
-						a(href='') Rocky Road Dessert
-					li 
-						a(href='') Linzer Torte
-					li 
-						a(href='') Malakoff Torte
-					li 
-						a(href='') Sachertorte
-					li 
-						a(href='') Vanilla Slice
-				.col-md-6 Bakery:
-					li 
-						a(href='') Apple strudel
-					li 
-						a(href='') Baklava
-					li 
-						a(href='') Banitsa
-					li 
-						a(href='') Birnbrot
-					li 
-						a(href='') Cherry pie
+    // Fixed navbar
+    nav#navigation.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        .container
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-navbar-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/')
+                    span.icon-stack
+                    b BOOTSTACK
+            // Collect the nav links, forms, and other content for toggling
+            #bs-navbar-collapse.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a.smoothScroll(href='#home') Home
+                    li
+                        a.smoothScroll(href='#features') Features
+                    li
+                        a.smoothScroll(href='#pricing') Pricing
+                    li
+                        a.smoothScroll(href='#contact') Contact
+                // Sign In / Sign Up
+                ul.nav.navbar-nav.navbar-right
+                    li.dropdown
+                        a(href='#signin', data-toggle='modal', data-target='.bs-modal-sm')
+                            span.icon-lock
+                            |  Sign In
+                    .navbar-form.pull-left
+                        a.btn.btn-sm.btn-theme(href='#signup', type='button', data-toggle='modal', data-target='.bs-modal-sm') Free Trial
+            // /nav-collapse
+        // /container
+    // /fixed-navbar
+    // Sign In / Sign Up Modal
+    #myModal.modal.fade.bs-modal-sm(tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel', aria-hidden='true')
+        .modal-dialog.modal-sm
+            .modal-content
+                br
+                .bs-example.bs-example-tabs
+                    ul#myTab.nav.nav-tabs.nav-justified
+                        li.active
+                            a(href='#signin', data-toggle='tab') Sign In
+                        li
+                            a(href='#signup', data-toggle='tab') Register
+                .modal-body
+                    #myTabContent.tab-content
+                        // Sign In Form
+                        #signin.tab-pane.fade.active.in
+                            form.form-horizontal
+                                fieldset
+                                    // Text input
+                                    .control-group
+                                        label.control-label(for='Email') Email:
+                                        .controls
+                                            input#Email.form-control.input-large(name='Email', type='text', placeholder='Your email address', required='')
+                                    // Password input
+                                    .control-group
+                                        label.control-label(for='passwordinput') Password:
+                                        .controls
+                                            input#passwordinput.form-control.input-medium(required='', name='passwordinput', type='password', placeholder='********')
+                                    // Multiple Checkboxes (inline)
+                                    .control-group
+                                        label.control-label(for='rememberme')
+                                        .controls
+                                            label.checkbox-inline(for='rememberme-0')
+                                                input#rememberme-0(type='checkbox', name='rememberme', value='Remember me')
+                                                |                                                    Remember me
+                                    // Button
+                                    .control-group
+                                        label.control-label(for='signin')
+                                        .controls
+                                            button#signin.btn.btn-theme.btn-block(name='signin') Sign In
+                        // /signin
+                        // Sign Up Form
+                        #signup.tab-pane.fade
+                            form.form-horizontal
+                                fieldset
+                                    // Text input
+                                    .control-group
+                                        label.control-label(for='Email') Email:
+                                        .controls
+                                            input#Email.form-control.input-large(name='Email', type='text', placeholder='Your email address', required='')
+                                    // Password input
+                                    .control-group
+                                        label.control-label(for='password') Password:
+                                        .controls
+                                            input#password.form-control.input-large(name='password', type='password', placeholder='********', required='')
+                                            em 1-8 Characters
+                                    // Text input
+                                    .control-group
+                                        label.control-label(for='reenterpassword') Re-Enter Password:
+                                        .controls
+                                            input#reenterpassword.form-control.input-large(name='reenterpassword', type='password', placeholder='********', required='')
+                                    // Multiple Radios (inline)
+                                    br
+                                    .control-group
+                                        label.control-label(for='humancheck') Humanity Check:
+                                        .controls
+                                            label.radio-inline(for='humancheck-0')
+                                                input#humancheck-0(type='radio', name='humancheck', value='robot', checked='checked')
+                                                | I'm a Robot
+                                            label.radio-inline(for='humancheck-1')
+                                                input#humancheck-1(type='radio', name='humancheck', value='human')
+                                                | I'm Human
+                                    // Button
+                                    .control-group
+                                        label.control-label(for='confirmsignup')
+                                        .controls
+                                            button#confirmsignup.btn.btn-theme.btn-block(name='confirmsignup') Sign Up
+                        // /signup
+                    // /tab-content
+                // /modal-body
+                //
+                  <div class="modal-footer">
+                  <div class="text-center">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                  </div>
+            // /modal-content
+        // /modal-dialog
+    // /modal
+    // Header Wrap
+    section#home
+        .headerwrap
+            .container
+                .row.text-center
+                    .col-lg-12
+                        h1 Chews
+                        h3 your personal menu
+                        br
+                            .col-lg-4
+                        img.img-responsive(src='/images/screenshot1.png', alt='')
+                    .col-lg-8
+                        h4 Enter Chews. We enhance the dining experience of consumers like Maria by making a universal menu that is smart, user-friendly and personal.
+                            // /container
+        // /headerwrap
+        // Intro Wrap
+        .intro
+            .container
+                .row.text-center
+                    h2 Proven Success
+                    hr
+                    br
+                    br
+                    .col-lg-3
+                        span.icon-users
+                        h3 Professional Services
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    .col-lg-3
+                        span.icon-stats
+                        h3 Cost Effective
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    .col-lg-3
+                        span.icon-stack
+                        h3 Scalable and Adaptable
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    .col-lg-3
+                        span.icon-thumbs-up
+                        h3 Easy to Use
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                br
+            // /container
+        // /introwrap
+    // Features Wrap
+    section#features
+        .featureswrap
+            .container
+                .row
+                    h2.text-center Features
+                    hr
+                    br
+                    br
+                    .col-lg-6
+                        img.img-responsive.left(src='/assets/images/mobile.png', alt='')
+                    .col-lg-6
+                        br
+                        // Accordion
+                        #accordion2.accordion.ac
+                            .accordion-group.active
+                                .accordion-heading
+                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseOne')
+                                        span.icon-cloud
+                                        |  Collaborate in the cloud
+                                // /accordion-heading
+                                #collapseOne.accordion-body.collapse.in
+                                    .accordion-inner
+                                        p
+                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    // /accordion-inner
+                                // /collapse
+                            // /accordion-group
+                            br
+                            .accordion-group
+                                .accordion-heading
+                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseTwo')
+                                        span.icon-checkmark
+                                        |  Get started fast
+                                #collapseTwo.accordion-body.collapse
+                                    .accordion-inner
+                                        p
+                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    // /accordion-inner
+                                // /collapse
+                            // /accordion-group
+                            br
+                            .accordion-group
+                                .accordion-heading
+                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseThree')
+                                        span.icon-bars
+                                        |  Deliver real time insights
+                                #collapseThree.accordion-body.collapse
+                                    .accordion-inner
+                                        p
+                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    // /accordion-inner
+                                // /collapse
+                            // /accordion-group
+                            br
+                            .accordion-group
+                                .accordion-heading
+                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseFour')
+                                        span.icon-list
+                                        |  Automate business processes
+                                #collapseFour.accordion-body.collapse
+                                    .accordion-inner
+                                        p
+                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    // /accordion-inner
+                                // /collapse
+                            // /accordion-group
+                            br
+                        // /accordion
+                // /row
+                br
+                br
+                br
+                .row
+                    h2.text-center Multi Useful Components
+                    hr
+                    br
+                    br
+                    .col-lg-6
+                        .glyphicon.glyphicon-cutlery
+                        br
+                        br
+                        h4
+                            span.icon-cogs
+                            |  Create customized business apps
+                        p
+                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        br
+                        br
+                    .col-lg-6
+                        img.img-responsive.right(src='/assets/images/tablet.png', alt='')
+                br
+                br
+                br
+            // /container
+        // /featureswrap
+    // Divider 1 Section
+    .divider01
+        .container
+            .row.text-center
+                #carousel-example-generic.carousel.slide
+                    // Wrapper for slides
+                    .carousel-inner
+                        .item.active
+                            h3 "Working with Bootstack was amazing. Their team is incredible."
+                            h4
+                                | John Doe,
+                                em A Company
+                        .item
+                            h3 "Bootstack has helped my team build amazing products. Amazing team."
+                            h4
+                                | Jane Doe,
+                                em A Company
+                    // /carousel-inner
+                    br
+                    br
+                    br
+                    //
+                      Indicators - Uncomment for indicators to show
+                      <ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                      </ol>
+                // /carousel-example
+            // /row
+        // /container
+    // /divider01
+    // Pricing Section
+                             section#contact
+    .footerwrap
+    .container
+    .row
+    .col-lg-4
+    h3 Contact Us
+    br
+    p
+    span.icon-location
+    |  Some Address 373, Palo Alto, CA
+    br
+    span.icon-phone
+    |  (800) 373-7733
+    br
+    span.icon-envelope
+    a(href='mailto:support@bootstacktheme.com') support@bootstacktheme.com
+    .col-lg-4
+    h3 We Are Social
+    br
+    #social
+    a.facebook(href='#', rel='tooltip', title='Facebook') Facebook
+    a.twitter(href='#', rel='tooltip', title='Twitter') Twitter
+    a.rss(href='#', rel='tooltip', title='RSS') RSS
+    a.github(href='#', rel='tooltip', title='Github') Github
+    a.linkedin(href='#', rel='tooltip', title='LinkedIn') LinkedIn
+    a.pintrest(href='#', rel='tooltip', title='Pintrest') Pintrest
+    a.vimeo(href='#', rel='tooltip', title='Vimeo') Vimeo
+    a.youtube(href='#', rel='tooltip', title='YouTube') YouTube
+    .col-lg-4
+    h3 Newsletter
+    br
+    p Subscribe to our newsletter and be the first to know our latest updates.
+    .form-inline
+    input.form-control(type='text', placeholder='Your email')
+    button.btn.btn-theme(type='button') Subscribe
+    // /row
+    // /container
+    // /footerwrap
+    // Copyright Wrap
+    .copywrap
+        .container
+            .row
+                .col-lg-10
+                    p Copyright ©2014 Crews. All Rights Reserved.
+                        // /row
+        // /container
+    // /copywrap (copyright)
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='../scripts/jquery-2.1.1.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='../scripts/bootstrap.min.js')
+    script(src='../scripts/jquery.easing.1.3.js')
+    script(src='../scripts/detectmobilebrowser.js')
+    script(src='../scripts/smoothscroll.js')
+    script(src='../scripts/waypoints.js')
+    script(src='../scripts/main.js')
+    script.
+        $('.carousel').carousel({
+            interval: 3500,
+            pause: "none"
+        })
